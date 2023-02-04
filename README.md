@@ -4,6 +4,10 @@ Demonstration video:
 ![caption](results/predict_turn.gif)
 
 ## Pipeline:
+<p align="middle">
+  <img src="results/predict_turn_flowchart.png" width="300" />
+</p>
+
 1. The given video is read frame-by-frame, and a region of interest points determined, perspective matrix is obtained using cv2.getPerspectiveTransform function and cv2.warpPerspective is used to warp the image into birds-eye perspective.
 2. Warped image is converted to HSL colorspace, lower and upper HSL values are determined for yellow and white lines and using cv2.inRange function masks for yellow and white lanes are created.
 3. From the yellow and white masks 2 nd order polynomials are fitted using numpy.polyfit function.
